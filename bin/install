@@ -23,7 +23,8 @@ install_erlang() {
 
   if [ "$ASDF_INSTALL_TYPE" = "ref" ]; then
     asdf_activation_version="$ASDF_INSTALL_TYPE:$ASDF_INSTALL_VERSION"
-    $(kerl_path) build git "${OTP_GITHUB_URL:-https://github.com/erlang/otp.git}" "$ASDF_INSTALL_VERSION" "$build_name"
+    # $(kerl_path) build git "${OTP_GITHUB_URL:-https://github.com/erlang/otp.git}" "$ASDF_INSTALL_VERSION" "$build_name"
+    $(kerl_path) build git "${OTP_GITHUB_URL:-https://gitee.com/mirrors/erlang.git}" "$ASDF_INSTALL_VERSION" "$build_name"
   else
     asdf_activation_version="$ASDF_INSTALL_VERSION"
     $(kerl_path) build "$ASDF_INSTALL_VERSION" "$build_name"
